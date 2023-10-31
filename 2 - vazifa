@@ -1,0 +1,283 @@
+# 2 - masala
+
+
+
+# # E-commerce Platform:
+# # Create a sophisticated e-commerce platform
+# # with classes for User, Product, ShoppingCart, and Order.
+# # Users can be both customers and sellers.
+# # Implement an intricate order processing system,
+# # with multiple payment methods and shipping options.
+# # Apply encapsulation to secure user
+# # and payment information.
+# # Demonstrate polymorphism by processing
+# # orders from different types of users.
+#
+#
+# class Cart:
+#     def __init__(self, id, user, sana, holat):
+#         self.__id = id
+#         self.__user = user
+#         self.__sana = sana
+#         self.holat = holat
+#         self.__narx = 0
+#         self.__bonus = 0
+#
+#     def get_narx(self):
+#         print(f"Narx:{self.__narx}\nBonus:{self.__bonus}")
+#         return self.__narx
+#
+#     def set_narx(self, a):
+#         self.__narx += a-a/20
+#         self.__bonus += a/20
+#
+#
+#
+# class Order:
+#     def __init__(self, product, amount, cart):
+#         self.product = product
+#         self.amount = amount
+#         self.cart = cart
+#         self.narx = product._narx * amount
+#         cart.set_narx(self.narx)
+#         product._user.set_daromad(self.narx)
+#
+#
+#
+# class Product:
+#     def __init__(self, nom, narx, sana, user):
+#         self._nom = nom
+#         self._narx = narx
+#         self._sana = sana
+#         self._user = user
+#
+#
+# class Cloth(Product):
+#     def __init__(self, nom, narx, sana, user, brend, size, rang):
+#         super().__init__(nom, narx, sana, user)
+#         self._brend = brend
+#         self._size = size
+#         self._rang = rang
+#
+#
+# class Gadget(Product):
+#     def __init__(self, model, narx, sana, user, brend, tur, holat):
+#         super().__init__(model, narx, sana, user)
+#         self.brend = brend
+#         self.tur = tur
+#         self.holat = holat
+#
+#
+#
+#
+# class User:
+#     def __init__(self, fish, email, telefon, yil, jins, manzil):
+#         self.__manzil = manzil
+#         self.__jins = jins
+#         self.__yil = yil
+#         self.__telefon = telefon
+#         self.__email = email
+#         self.__fish = fish
+#         self.__daromad = 0
+#
+#
+#     def set_daromad(self, a):
+#         self.__daromad += a
+#
+#     def get_daromad(self):
+#         return self.__daromad
+#
+#     def get_manzil(self):
+#         return self.__manzil
+#
+#     def get_jins(self):
+#         return self.__jins
+#
+#     def get_email(self):
+#         return self.__email
+#
+#     def get_telefon(self):
+#         return self.__telefon
+#
+#     def get_fish(self):
+#         return self.__fish
+#
+#     def get_yil(self):
+#         return self.__yil  0
+
+
+
+
+# 3 - masala.
+
+
+#
+# class Airline:
+#     def __init__(self, name):
+#         self.name = name
+#         self.flights = []
+#
+#     def add_flight(self, flight):
+#         self.flights.append(flight)
+#
+#     def display_flights(self):
+#         print(f"Reyslar {self.name} da mavjud:")
+#         for flight in self.flights:
+#             print(flight)
+#
+# class Flight:
+#     def __init__(self, parvoz_raqami, boradigan joy, jo'nash_vaqti, kelish_vaqti, sig'im):
+#         self.flight_number = parvoz_raqami
+#         self.destination = boradigan joy
+#         self.departure_time = jo'nash_vaqti'
+#         self.arrival_time = kelish_vaqti
+#         self.capacity = sig'imi
+#         self.passengers = []
+#
+#     def is_full(self):
+#         return len(self.passengers) >= self.capacity
+#
+#     def add_passenger(self, passenger):
+#         if not self.is_full():
+#             self.passengers.append(passenger)
+#             print(f"Passenger {passenger.name} booked on Flight {self.flight_number}")
+#         else:
+#             print(f"Flight {self.flight_number} is already full.")
+#
+#     def display_passengers(self):
+#         print(f"Passengers booked on Flight {self.flight_number}:")
+#         for passenger in self.passengers:
+#             print(passenger)
+#
+# class Passenger:
+#     def __init__(self, name, email, passport_number):
+#         self.name = name
+#         self.email = email
+#         self.passport_number = passport_number
+#
+#     def __str__(self):
+#         return f"Passenger: {self.name}, Email: {self.email}, Passport: {self.passport_number}"
+#
+# class Booking:
+#     def __init__(self):
+#         self.airlines = []
+#
+#     def add_airline(self, airline):
+#         self.airlines.append(airline)
+#
+#     def display_airlines(self):
+#         print("Available Airlines:")
+#         for airline in self.airlines:
+#             print(airline.name)
+#
+#     def book_flight(self, airline_name, flight_number, passenger):
+#         for airline in self.airlines:
+#             if airline.name == airline_name:
+#                 for flight in airline.flights:
+#                     if flight.flight_number == flight_number:
+#                         flight.add_passenger(passenger)
+#                         return
+#                 print(f"Flight {flight_number} not found for Airline {airline_name}.")
+#                 return
+#         print(f"Airline {airline_name} not found.")
+#
+# # Usage Example
+# booking_system = Booking()
+#
+# # Create Airlines
+# airline1 = Airline("Airline1")
+# airline2 = Airline("Airline2")
+#
+# # Create Flights
+# flight1 = Flight("F001", "CityA", "CityB", "10:00 AM", "12:00 PM", 100)
+# flight2 = Flight("F002", "CityB", "CityC", "2:00 PM", "4:00 PM", 150)
+#
+# # Add Flights to Airlines
+# airline1.add_flight(flight1)
+# airline2.add_flight(flight2)
+#
+# # Add Airlines to Booking System
+# booking_system.add_airline(airline1)
+# booking_system.add_airline(airline2)
+#
+# # Display available Airlines
+# booking_system.display_airlines()
+#
+# # Book a flight
+# passenger1 = Passenger("John Smith", "john@example.com", "ABCD1234")
+# booking_system.book_flight("Airline1", "F001", passenger1)
+#
+# # Display passengers on a flight
+# flight1.display_passengers()
+
+
+
+#//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+# from abc import ABC, abstractmethod
+#
+#
+# class ShipBlueprint(ABC):
+#     @abstractmethod
+#     def tezlashish(self):
+#         pass
+#
+#     def yelkanlarni_kotarish(self):
+#         pass
+#
+#     @abstractmethod
+#     def burilish(self):
+#         pass
+#
+#     @abstractmethod
+#     def langar_tashlash(self):
+#         pass
+#
+#     @abstractmethod
+#     def tor_tashlash(self):
+#         pass
+#
+#     @abstractmethod
+#     def danger(self):
+#         pass
+#
+#
+#
+#
+# class Ship(ShipBlueprint):
+#     def tezlashish(self, a=10):
+#         pass
+#     def burilish(self):
+#         pass
+#
+#     def langar_tashlash(self):
+#
+#
+#     def tor_tashlash(self):
+#         pass
+#
+#     def danger(self):
+#         pass
+#
+#     def __init__(self, nom, brend, sigim, max_tezlik, narx):
+#         self.__nom = nom
+#         self.__narx = narx
+#         self.__max_tezlik = max_tezlik
+#         self.__sigim = sigim
+#         self.__brend = brend
+#         self.__tezlik = 0
+#         self.__langar_pastda = True
+#         self.__yeklan = False
+#         self.__sos = "SOS SOS SOS YORDAM PLIZ"
+#
+#
+#     def __init__(self, nom, brend, sigim, max_tezlik, narx):
+#         self.__nom = nom
+#         self.__narx = narx
+#         self.__max_tezlik = max_tezlik
+#         self.__sigim = sigim
+#         self.__brend = brend
+#         self.__tezlik = 0
